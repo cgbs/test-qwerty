@@ -1,0 +1,20 @@
+.uploads li{
+    margin: 5px;
+    text-align: left;
+}
+.uploads .filename{
+    width: 330px;
+    min-width: 330px;
+    display: inline-block;
+    word-break: break-all;
+    vertical-align: middle;
+    text-align: left;
+}
+.btn{
+    margin-right: 3px;
+    text-align: left;
+    font-size: 12px;
+}
+.form-convert-upload input[type="file"]{
+    margin: auto;
+}
