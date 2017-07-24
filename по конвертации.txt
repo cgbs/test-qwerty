@@ -1,0 +1,21 @@
+1. конвертация из office в pdf
+	-через консоль Libreoffice
+	-коммандой: libreoffice --headless --convert-to pdf LR4.docx
+
+Важно! Чтобы запускать файлы из под вебсервера - нужно дать ему права на создание libreoffice конфига
+sudo mkdir /var/www/.config
+sudo chown www-data /var/www/.config
+
+
+2. Запрет с помощью формата PDF
+	-через тулзу pdftk
+	-команда: pdftk CV\ Жека.pdf output CV-protected.pdf owner_pw "test1"
+
+3. Хардкорный запрет через полную растаризацию
+	-через ImageMagick+Ghostscript
+	-команда: convert -density 600 +antialias pc-config.pdf pc-rast.pdf
+	- density - это качество, чем меньше тем хуже и быстрее.
+
+Работает с MS Word, Exel и PowerPoint
+
+Важно, нужно блокировать средствами pdftk уже готовый расторизированный файл, в начале растр, потом блокировка.
