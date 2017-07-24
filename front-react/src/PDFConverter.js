@@ -16,7 +16,7 @@ export class PDFConverter extends Component {
     }
     getFiles(){
         var self = this;
-        axios.get(this.props.host+'/files/').then(function (files) {
+        axios.get(this.props.host+'/files').then(function (files) {
             files = files.data;
             for (var index = 0; index < files.length; index++) {
                 files[index].actionDelete = self.props.host+'/deletefile/'+files[index].id;
